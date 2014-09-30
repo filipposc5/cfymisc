@@ -1,0 +1,28 @@
++ alias sudo=echo
++ alias check_dir=echo check_dir
+alias check_dir='echo'
++ PKG_NAME=cloudify-centos-agent
++ PKG_DIR=/agents/centos-agent
++ BOOTSTRAP_LOG=/var/log/cloudify3-bootstrap.log
++ VERSION=3.0.0
++ BASE_DIR=/env
++ HOME_DIR=/env/cloudify-centos-agent/cloudify./env
++ FILE_SERVER_PATH=/opt/manager/resources
++ DST_AGENT_LOCATION=packages/agents
++ DST_TEMPLATE_LOCATION=packages/templates
++ DST_SCRIPT_LOCATION=packages/scripts
++ echo -e '\nInstalling cloudify-centos-agent version 3.0.0...\n'
++ tee -a /var/log/cloudify3-bootstrap.log
+
+Installing cloudify-centos-agent version 3.0.0...
+
++ sudo mkdir -p /opt/manager/resources/packages/agents
++ sudo mkdir -p /opt/manager/resources/packages/templates
++ sudo mkdir -p /opt/manager/resources/packages/scripts
++ check_dir /opt/manager/resources/packages/agents
++ check_dir /opt/manager/resources/packages/templates
++ check_dir /opt/manager/resources/packages/scripts
++ sudo cp -R /agents/centos-agent/centos-agent.tar.gz /opt/manager/resources/packages/agents
++ sudo cp -R /agents/centos-agent/config/centos-celeryd-cloudify.conf.template /agents/centos-agent/config/centos-celeryd-cloudify.init.template /opt/manager/resources/packages/templates
++ sudo cp -R /agents/centos-agent/config/centos-agent-disable-requiretty.sh /opt/manager/resources/packages/scripts
+
