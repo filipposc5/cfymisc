@@ -1,0 +1,27 @@
+. /home/vagrant/cloudify.sambuca_workflows/work/celeryd-includes
+CELERY_BASE_DIR="/home/vagrant"
+
+# replaces management__worker
+WORKER_MODIFIER="sambuca_workflows"
+
+export BROKER_IP="127.0.0.1"
+export MANAGEMENT_IP="127.0.0.1"
+export BROKER_URL="amqp://guest:guest@${BROKER_IP}:5672//"
+export MANAGER_REST_PORT="80"
+export CELERY_WORK_DIR="${CELERY_BASE_DIR}/cloudify.${WORKER_MODIFIER}/work"
+export IS_MANAGEMENT_NODE="False"
+export AGENT_IP="127.0.0.1"
+export VIRTUALENV="${CELERY_BASE_DIR}/cloudify.${WORKER_MODIFIER}/env"
+export MANAGER_FILE_SERVER_URL="http://${MANAGEMENT_IP}:53229"
+export MANAGER_FILE_SERVER_BLUEPRINTS_ROOT_URL="${MANAGER_FILE_SERVER_URL}/blueprints"
+
+
+CELERYD_MULTI="${VIRTUALENV}/bin/celeryd-multi"
+CELERYD_USER="vagrant"
+CELERYD_GROUP="vagrant"
+CELERY_TASK_SERIALIZER="json"
+CELERY_RESULT_SERIALIZER="json"
+CELERY_RESULT_BACKEND="$BROKER_URL"
+DEFAULT_PID_FILE="${CELERY_WORK_DIR}/celery.pid"
+DEFAULT_LOG_FILE="${CELERY_WORK_DIR}/celery.log"
+CELERYD_OPTS="--events --loglevel=debug --app=cloudify --include=${INCLUDES} -Q ${WORKER_MODIFIER} --broker=${BROKER_URL} --hostname=${WORKER_MODIFIER} --autoscale=5,2"

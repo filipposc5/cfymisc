@@ -1,0 +1,156 @@
+
+
+cfy status
+
+(cloudify)vagrant@cloudify:~/simple$ cfy status
+Getting management services status... [ip=localhost]
+
+Services:
++--------------------------------+---------+
+|            service             |  status |
++--------------------------------+---------+
+| RabbitMQ                       | running |
+| Cloudify Manager               | running |
+| Elasticsearch                  | running |
+| Riemann                        | running |
+| Syslog                         | running |
+| Celery Managment               | running |
+| Cloudify UI                    | running |
+| Webserver                      | running |
+| Logstash                       | running |
+| SSH                            | running |
++--------------------------------+---------+
+
+(cloudify)vagrant@cloudify:~/simple$
+
+
+(cloudify)vagrant@cloudify:~/simple$ cfy deployments create -b nodecellar1 -d sambuca
+
+so we have deployment id when we create the deployment 
+
+(cloudify)vagrant@cloudify:~/simple$ cfy executions list -d sambuca
+Getting executions list for deployment: 'sambuca' [manager=localhost]
+
+Executions:
++--------------------------------------+----------------------+------------+----------------------------+-------+
+|                  id                  |     workflow_id      |   status   |         created_at         | error |
++--------------------------------------+----------------------+------------+----------------------------+-------+
+| 09d7c907-ec81-470e-9de2-c4140117efd3 | workers_installation | terminated | 2014-10-01 13:56:43.057604 |       |
++--------------------------------------+----------------------+------------+----------------------------+-------+
+
+
+(cloudify)vagrant@cloudify:~/simple$ cfy executions get -e 09d7c907-ec81-470e-9de2-c4140117efd3
+Getting execution: '09d7c907-ec81-470e-9de2-c4140117efd3' [manager=localhost]
+
+Executions:
++--------------------------------------+----------------------+------------+----------------------------+-------+
+|                  id                  |     workflow_id      |   status   |         created_at         | error |
++--------------------------------------+----------------------+------------+----------------------------+-------+
+| 09d7c907-ec81-470e-9de2-c4140117efd3 | workers_installation | terminated | 2014-10-01 13:56:43.057604 |       |
++--------------------------------------+----------------------+------------+----------------------------+-------+
+
+Execution Parameters:
+        management_plugins_to_install:  []
+        workflow_plugins_to_install:    [{u'url': u'workflows.zip', u'agent_plugin': u'false', u'name': u'workflows', u'manager_plugin': u'true'}]
+
+
+
+
+(cloudify)vagrant@cloudify:~/simple$ cfy deployments execute -v -l -d sambuca
+
+
+
+  |-python -m celery.bin.celeryd--include=worker_installer.tasks,plugin_installer.tasks,
+  |   |-python -m celery.bin.celeryd--include=worker_installer.tasks,plugin_installer.tasks,
+  |   |   `-sh -c /bin/bash /tmp/O6S65/install-mongo.sh
+  |   |       `-bash /tmp/O6S65/install-mongo.sh
+  |   |           `-sleep 15m
+
+vagrant@cloudify:/opt/celery/cloudify.management__worker$ ls ~vagrant
+bonkers  cloudify  cloudify.mongod_vm_a95b5  cloudify.nodejs_vm_9b1ff  cloudify.sambuca  cloudify.sambuca_workflows  simple  tmp  wget-log  wget-log.1
+
+(cloudify)vagrant@cloudify:~/cloudify.sambuca_workflows$ service --status-all  2>&1| grep celer
+ [ ? ]  celeryd-mongod_vm_a95b5
+ [ ? ]  celeryd-nodejs_vm_9b1ff
+ [ ? ]  celeryd-sambuca
+ [ ? ]  celeryd-sambuca_workflows
+
+
+(cloudify)vagrant@cloudify:/etc$ find . -name celery\*
+find: `./ssl/private': Permission denied
+./default/celeryd-sambuca
+./default/celeryd-mongod_vm_a95b5
+./default/celeryd-sambuca_workflows
+./default/celeryd-nodejs_vm_9b1ff
+./init/celeryd-cloudify-management.conf.bak
+./init/celeryd-cloudify-management.conf
+./init.d/celeryd-sambuca
+./init.d/celeryd-mongod_vm_a95b5
+./init.d/celeryd-sambuca_workflows
+./init.d/celeryd-nodejs_vm_9b1ff
+(cloudify)vagrant@cloudify:/etc$
+
+
+
+(cloudify)vagrant@cloudify:/etc$ cat ./default/celeryd-sambuca_workflows
+. /home/vagrant/cloudify.sambuca_workflows/work/celeryd-includes
+CELERY_BASE_DIR="/home/vagrant"
+
+# replaces management__worker
+WORKER_MODIFIER="sambuca_workflows"
+
+export BROKER_IP="127.0.0.1"
+export MANAGEMENT_IP="127.0.0.1"
+export BROKER_URL="amqp://guest:guest@${BROKER_IP}:5672//"
+export MANAGER_REST_PORT="80"
+export CELERY_WORK_DIR="${CELERY_BASE_DIR}/cloudify.${WORKER_MODIFIER}/work"
+export IS_MANAGEMENT_NODE="False"
+export AGENT_IP="127.0.0.1"
+export VIRTUALENV="${CELERY_BASE_DIR}/cloudify.${WORKER_MODIFIER}/env"
+export MANAGER_FILE_SERVER_URL="http://${MANAGEMENT_IP}:53229"
+export MANAGER_FILE_SERVER_BLUEPRINTS_ROOT_URL="${MANAGER_FILE_SERVER_URL}/blueprints"
+
+
+CELERYD_MULTI="${VIRTUALENV}/bin/celeryd-multi"
+CELERYD_USER="vagrant"
+CELERYD_GROUP="vagrant"
+CELERY_TASK_SERIALIZER="json"
+CELERY_RESULT_SERIALIZER="json"
+CELERY_RESULT_BACKEND="$BROKER_URL"
+DEFAULT_PID_FILE="${CELERY_WORK_DIR}/celery.pid"
+DEFAULT_LOG_FILE="${CELERY_WORK_DIR}/celery.log"
+CELERYD_OPTS="--events --loglevel=debug --app=cloudify --include=${INCLUDES} -Q ${WORKER_MODIFIER} --broker=${BROKER_URL} --hostname=${WORKER_MODIFIER} --autoscale=5,2"(cloudify)vagrant@cloudify:/etc$
+
+
+(cloudify)vagrant@cloudify:/etc$ find . -name celery\* -exec tar cvf /tmp/celery.tar {} \;
+find: `./ssl/private': Permission denied
+./default/celeryd-sambuca
+./default/celeryd-mongod_vm_a95b5
+./default/celeryd-sambuca_workflows
+./default/celeryd-nodejs_vm_9b1ff
+./init/celeryd-cloudify-management.conf.bak
+./init/celeryd-cloudify-management.conf
+./init.d/celeryd-sambuca
+./init.d/celeryd-mongod_vm_a95b5
+./init.d/celeryd-sambuca_workflows
+./init.d/celeryd-nodejs_vm_9b1ff
+(cloudify)vagrant@cloudify:/etc$ ls -l /tmp/celery.tar
+-rw-rw-r-- 1 vagrant vagrant 10240 Oct  1 14:23 /tmp/celery.tar
+(cloudify)vagrant@cloudify:/etc$ find . -name celery\* -exec tar uvf /tmp/celery.tar {} \;
+find: `./ssl/private': Permission denied
+./default/celeryd-sambuca
+./default/celeryd-mongod_vm_a95b5
+./default/celeryd-sambuca_workflows
+./default/celeryd-nodejs_vm_9b1ff
+./init/celeryd-cloudify-management.conf.bak
+./init/celeryd-cloudify-management.conf
+./init.d/celeryd-sambuca
+./init.d/celeryd-mongod_vm_a95b5
+./init.d/celeryd-sambuca_workflows
+(cloudify)vagrant@cloudify:/etc$
+
+
+
+
+
+
