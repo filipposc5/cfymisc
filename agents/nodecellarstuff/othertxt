@@ -153,4 +153,32 @@ find: `./ssl/private': Permission denied
 
 
 
-
+2014-10-01T17:03:11 CFY <sambuca> [nodejs_vm_9b1ff] Installing plugin
+2014-10-01T17:03:11 CFY <sambuca> [nodejs_vm_9b1ff] Installing plugins: [{u'url': u'https://github.com/cloudify-cosmo/cloudify-bash-plugin/archive/1.0.zip', u'agent_plugin': u'true', u'name': u'bash_runner', u'manager_plugin': u'false'}, {u'folder': u'nodecellar-config-plugin', u'agent_plugin': u'true', u'name': u'nodecellar_config_plugin', u'manager_plugin': u'false'}]
+2014-10-01T17:03:11 CFY <sambuca> [mongod_vm_a95b5.start] Task succeeded 'worker_installer.tasks.start'
+2014-10-01T17:03:11 CFY <sambuca> [nodejs_vm_9b1ff.install] Sending task 'plugin_installer.tasks.install'
+2014-10-01T17:03:11 CFY <sambuca> [nodejs_vm_9b1ff.install] Task started 'plugin_installer.tasks.install'
+2014-10-01T17:03:11 CFY <sambuca> [mongod_vm_a95b5] Installing plugin
+2014-10-01T17:03:11 CFY <sambuca> [mongod_vm_a95b5] Installing plugins: [{u'url': u'https://github.com/cloudify-cosmo/cloudify-bash-plugin/archive/1.0.zip', u'agent_plugin': u'true', u'name': u'bash_runner', u'manager_plugin': u'false'}]
+2014-10-01T17:03:12 CFY <sambuca> [mongod_vm_a95b5.install] Sending task 'plugin_installer.tasks.install'
+2014-10-01T17:03:12 CFY <sambuca> [mongod_vm_a95b5.install] Task started 'plugin_installer.tasks.install'
+2014-10-01T17:03:28 CFY <sambuca> [mongod_vm_a95b5.install] Task succeeded 'plugin_installer.tasks.install'
+2014-10-01T17:03:32 CFY <sambuca> [nodejs_vm_9b1ff.install] Task succeeded 'plugin_installer.tasks.install'
+2014-10-01T17:03:36 CFY <sambuca> [mongod_4baf9] Creating node
+2014-10-01T17:03:36 CFY <sambuca> [mongod_4baf9.create] Sending task 'bash_runner.tasks.run'
+2014-10-01T17:03:36 CFY <sambuca> [mongod_4baf9.create] Task started 'bash_runner.tasks.run'
+2014-10-01T17:03:40 CFY <sambuca> [nodejs_d0412] Creating node
+2014-10-01T17:03:41 CFY <sambuca> [nodejs_d0412.create] Sending task 'bash_runner.tasks.run'
+2014-10-01T17:03:41 CFY <sambuca> [nodejs_d0412.create] Task started 'bash_runner.tasks.run'
+2014-10-01T17:04:37 CFY <sambuca> [nodejs_d0412.create] Task succeeded 'bash_runner.tasks.run ('[install-nodejs.sh] succeeded. return code 0')'
+2014-10-01T17:04:37 CFY <sambuca> [nodejs_d0412] Configuring node
+2014-10-01T17:04:37 CFY <sambuca> [nodejs_d0412.configure] Sending task 'bash_runner.tasks.run'
+2014-10-01T17:04:38 CFY <sambuca> [nodejs_d0412] Starting node
+2014-10-01T17:04:37 CFY <sambuca> [nodejs_d0412.configure] Task succeeded 'bash_runner.tasks.run'
+2014-10-01T17:04:38 CFY <sambuca> [nodejs_d0412] Starting node
+2014-10-01T17:04:38 CFY <sambuca> [nodejs_d0412.start] Sending task 'bash_runner.tasks.run'
+2014-10-01T17:04:38 CFY <sambuca> [nodejs_d0412.start] Task started 'bash_runner.tasks.run'
+2014-10-01T17:04:38 CFY <sambuca> [nodejs_d0412.start] Task succeeded 'bash_runner.tasks.run'
+Execution of workflow 'install' for deployment 'sambuca' timed out. * Run 'cfy executions cancel --execution-id c96e5245-2564-47d2-b614-9f431db2c300' to cancel the running workflow.
+* Run 'cfy events --include-logs --execution-id c96e5245-2564-47d2-b614-9f431db2c300' for retrieving the execution's events/logs
+(cloudify)vagrant@cloudify:~/simple$
