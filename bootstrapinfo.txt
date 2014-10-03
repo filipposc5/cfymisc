@@ -1,0 +1,192 @@
+2014-08-07 11:06:39,442 [INFO] Initializing Cloudify
+2014-08-07 11:06:39,450 [INFO] Initialization complete
+2014-08-07 11:06:39,715 [INFO] prefix for all resources: ''
+2014-08-07 11:06:39,716 [INFO] bootstrapping using cloudify_simple_provider
+2014-08-07 11:06:39,716 [INFO] validating provider resources and configuration
+2014-08-07 11:06:39,716 [DEBUG] validating config file against provided schema...
+2014-08-07 11:06:39,717 [INFO] schema validated successfully
+2014-08-07 11:06:39,717 [INFO] provider validations completed successfully
+2014-08-07 11:06:39,717 [INFO] provisioning resources for management server...
+2014-08-07 11:06:39,717 [INFO] provisioning complete
+2014-08-07 11:06:39,717 [INFO] ensuring connectivity with the management server...
+2014-08-07 11:06:39,717 [DEBUG] Trying to open an SSH socket to management machine (attempt 1 of 20)
+2014-08-07 11:06:40,763 [INFO] connected with the management server successfully
+2014-08-07 11:06:40,764 [INFO] bootstrapping the management server...
+2014-08-07 11:06:40,765 [INFO] initializing manager on the machine at 127.0.0.1
+2014-08-07 11:06:40,765 [DEBUG] identifying instance distribution...
+2014-08-07 11:06:40,766 [DEBUG] running command: python -c "import platform; print platform.dist()[0]"
+2014-08-07 11:06:40,881 [DEBUG] successfully ran command: python -c "import platform; print platform.dist()[0]"
+2014-08-07 11:06:40,881 [DEBUG] distribution is: Ubuntu
+2014-08-07 11:06:40,881 [DEBUG] checking package-distro compatibility
+2014-08-07 11:06:40,881 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,881 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,881 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,881 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,881 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,882 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,882 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,882 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,882 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,882 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,882 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb
+2014-08-07 11:06:40,882 [DEBUG] extracting file extension from url
+2014-08-07 11:06:40,882 [INFO] downloading cloudify-components package...
+2014-08-07 11:06:40,882 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-08-07 11:09:33,894 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-08-07 11:09:33,895 [INFO] downloading cloudify-core package...
+2014-08-07 11:09:33,895 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-08-07 11:09:54,775 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-08-07 11:09:54,776 [INFO] downloading cloudify-ui...
+2014-08-07 11:09:54,776 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb -P /cloudify-ui
+2014-08-07 11:10:03,254 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb -P /cloudify-ui
+2014-08-07 11:10:03,255 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:13,715 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:13,716 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:21,070 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:21,070 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:25,699 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-08-07 11:10:25,699 [INFO] unpacking cloudify-core packages...
+2014-08-07 11:10:25,699 [DEBUG] running command: sudo dpkg -i /cloudify/*.deb
+2014-08-07 11:10:40,585 [DEBUG] successfully ran command: sudo dpkg -i /cloudify/*.deb
+2014-08-07 11:10:40,586 [DEBUG] verifying verbosity for installation process.
+2014-08-07 11:10:40,587 [INFO] installing cloudify on 127.0.0.1...
+2014-08-07 11:10:40,587 [DEBUG] running command: sudo /cloudify-components/cloudify-components-bootstrap.sh
+2014-08-07 11:12:29,401 [DEBUG] successfully ran command: sudo /cloudify-components/cloudify-components-bootstrap.sh
+2014-08-07 11:12:29,401 [DEBUG] running command: sudo /cloudify-core/cloudify-core-bootstrap.sh vagrant 127.0.0.1
+2014-08-07 11:12:48,253 [DEBUG] successfully ran command: sudo /cloudify-core/cloudify-core-bootstrap.sh vagrant 127.0.0.1
+2014-08-07 11:12:48,255 [INFO] installing cloudify-ui...
+2014-08-07 11:12:48,255 [DEBUG] running command: sudo dpkg -i /cloudify-ui/*.deb
+2014-08-07 11:13:36,192 [DEBUG] successfully ran command: sudo dpkg -i /cloudify-ui/*.deb
+2014-08-07 11:13:36,193 [INFO] cloudify-ui installation successful.
+2014-08-07 11:13:36,195 [INFO] deploying cloudify agents
+2014-08-07 11:13:36,195 [DEBUG] running command: sudo dpkg -i /cloudify-agents/*.deb
+2014-08-07 11:13:38,006 [DEBUG] successfully ran command: sudo dpkg -i /cloudify-agents/*.deb
+2014-08-07 11:13:38,007 [INFO] cloudify agents installation successful.
+2014-08-07 11:13:38,007 [DEBUG] setting verbosity to previous state
+2014-08-07 11:13:38,007 [INFO] bootstrapping complete
+
+
+
+
+
+
+2014-08-07 11:13:38,691 [INFO] management server is up at 127.0.0.1 (is now set as the default management server)
+2014-09-24 11:49:30,122 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 11:49:30,124 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 11:51:07,677 [ERROR] IOError: [Errno 13] Permission denied: '.cloudify'
+2014-09-24 11:51:13,103 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 11:51:13,104 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:11,802 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:11,802 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:18,724 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:18,724 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:28,410 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:09:28,410 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:19:08,387 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:19:08,387 [ERROR] You must first initialize by running the command "cfy init", or choose to work with an existing management server by running the command "cfy use".
+2014-09-24 18:19:21,582 [INFO] Using management server 127.0.0.1
+2014-09-25 07:08:28,026 [INFO] Initializing Cloudify
+2014-09-25 07:08:28,037 [INFO] Initialization complete
+2014-09-25 07:14:40,261 [ERROR] This action requires additional confirmation. Add the '-f' or '--force' flags to your command if you are certain this command should be executed.
+2014-09-25 07:14:40,261 [ERROR] This action requires additional confirmation. Add the '-f' or '--force' flags to your command if you are certain this command should be executed.
+2014-09-25 07:15:02,265 [ERROR] ValueError: Configuration file missing; expected to find it at cloudify-config.yaml
+2014-09-25 07:15:27,121 [INFO] tearing down 127.0.0.1
+2014-09-25 07:15:27,126 [INFO] teardown complete
+2014-09-25 07:18:00,910 [INFO] prefix for all resources: ''
+2014-09-25 07:18:00,910 [INFO] bootstrapping using cloudify_simple_provider
+2014-09-25 07:18:00,911 [INFO] validating provider resources and configuration
+2014-09-25 07:18:00,911 [INFO] schema validated successfully
+2014-09-25 07:18:00,911 [INFO] provider validations completed successfully
+2014-09-25 07:18:00,911 [INFO] provisioning resources for management server...
+2014-09-25 07:18:00,911 [INFO] provisioning complete
+2014-09-25 07:18:00,911 [INFO] ensuring connectivity with the management server...
+2014-09-25 07:18:00,956 [ERROR] Error occurred while trying to SSH connect to management machine: [Errno 2] No such file or directory: '/home/vagrant/.ssh/cloudify-agents-kp.pem'
+2014-09-25 07:18:00,957 [ERROR] failed connecting to the management server!
+2014-09-25 07:18:00,957 [INFO] tearing down topology due to bootstrap failure
+2014-09-25 07:19:43,352 [INFO] prefix for all resources: ''
+2014-09-25 07:19:43,353 [INFO] bootstrapping using cloudify_simple_provider
+2014-09-25 07:19:43,353 [INFO] validating provider resources and configuration
+2014-09-25 07:19:43,354 [INFO] schema validated successfully
+2014-09-25 07:19:43,355 [INFO] provider validations completed successfully
+2014-09-25 07:19:43,355 [INFO] provisioning resources for management server...
+2014-09-25 07:19:43,356 [INFO] provisioning complete
+2014-09-25 07:19:43,356 [INFO] ensuring connectivity with the management server...
+2014-09-25 07:19:43,886 [INFO] connected with the management server successfully
+2014-09-25 07:19:43,887 [INFO] bootstrapping the management server...
+2014-09-25 07:19:43,887 [INFO] initializing manager on the machine at 127.0.0.1
+2014-09-25 07:19:44,005 [INFO] downloading cloudify-components package...
+2014-09-25 07:21:58,782 [WARNING] Error occurred while running command: 
+2014-09-25 07:21:58,782 [WARNING] retrying command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:22:04,244 [WARNING] Error occurred while running command: 
+2014-09-25 07:22:04,244 [WARNING] retrying command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:22:04,746 [ERROR] bootstrapping failed!
+2014-09-25 07:22:04,746 [INFO] tearing down topology due to bootstrap failure
+2014-09-25 07:22:04,747 [ERROR] KeyboardInterrupt: 
+2014-09-25 07:22:29,122 [INFO] prefix for all resources: ''
+2014-09-25 07:22:29,123 [INFO] bootstrapping using cloudify_simple_provider
+2014-09-25 07:22:29,123 [INFO] validating provider resources and configuration
+2014-09-25 07:22:29,123 [DEBUG] validating config file against provided schema...
+2014-09-25 07:22:29,123 [INFO] schema validated successfully
+2014-09-25 07:22:29,124 [INFO] provider validations completed successfully
+2014-09-25 07:22:29,124 [INFO] provisioning resources for management server...
+2014-09-25 07:22:29,124 [INFO] provisioning complete
+2014-09-25 07:22:29,124 [INFO] ensuring connectivity with the management server...
+2014-09-25 07:22:29,124 [DEBUG] Trying to open an SSH socket to management machine (attempt 1 of 20)
+2014-09-25 07:22:29,662 [INFO] connected with the management server successfully
+2014-09-25 07:22:29,662 [INFO] bootstrapping the management server...
+2014-09-25 07:22:29,662 [INFO] initializing manager on the machine at 127.0.0.1
+2014-09-25 07:22:29,663 [DEBUG] identifying instance distribution...
+2014-09-25 07:22:29,663 [DEBUG] running command: python -c "import platform; print platform.dist()[0]"
+2014-09-25 07:22:29,781 [DEBUG] successfully ran command: python -c "import platform; print platform.dist()[0]"
+2014-09-25 07:22:29,781 [DEBUG] distribution is: Ubuntu
+2014-09-25 07:22:29,781 [DEBUG] checking package-distro compatibility
+2014-09-25 07:22:29,781 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [DEBUG] checking distro-type match for url: http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb
+2014-09-25 07:22:29,782 [DEBUG] extracting file extension from url
+2014-09-25 07:22:29,782 [INFO] downloading cloudify-components package...
+2014-09-25 07:22:29,782 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:36:22,906 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-components_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:36:22,906 [INFO] downloading cloudify-core package...
+2014-09-25 07:36:22,907 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:36:56,977 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-core_3.0.0-ga-b6_amd64.deb -P /cloudify
+2014-09-25 07:36:56,978 [INFO] downloading cloudify-ui...
+2014-09-25 07:36:56,978 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb -P /cloudify-ui
+2014-09-25 07:37:16,672 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ui_3.0.0-ga-b6_amd64.deb -P /cloudify-ui
+2014-09-25 07:37:16,672 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:37:46,319 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-centos-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:37:46,320 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:38:11,233 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-ubuntu-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:38:11,233 [DEBUG] running command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:38:20,501 [DEBUG] successfully ran command: sudo wget http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/3.0.0/nightly_6/cloudify-windows-agent_3.0.0-ga-b6_amd64.deb -P /cloudify-agents
+2014-09-25 07:38:20,501 [INFO] unpacking cloudify-core packages...
+2014-09-25 07:38:20,501 [DEBUG] running command: sudo dpkg -i /cloudify/*.deb
+2014-09-25 07:38:25,370 [DEBUG] successfully ran command: sudo dpkg -i /cloudify/*.deb
+2014-09-25 07:38:25,370 [DEBUG] verifying verbosity for installation process.
+2014-09-25 07:38:25,370 [INFO] installing cloudify on 127.0.0.1...
+2014-09-25 07:38:25,370 [DEBUG] running command: sudo /cloudify-components/cloudify-components-bootstrap.sh
+2014-09-25 07:38:34,815 [DEBUG] successfully ran command: sudo /cloudify-components/cloudify-components-bootstrap.sh
+2014-09-25 07:38:34,815 [DEBUG] running command: sudo /cloudify-core/cloudify-core-bootstrap.sh vagrant 127.0.0.1
+2014-09-25 07:38:34,966 [DEBUG] successfully ran command: sudo /cloudify-core/cloudify-core-bootstrap.sh vagrant 127.0.0.1
+2014-09-25 07:38:34,967 [INFO] installing cloudify-ui...
+2014-09-25 07:38:34,967 [DEBUG] running command: sudo dpkg -i /cloudify-ui/*.deb
+2014-09-25 07:39:25,773 [DEBUG] successfully ran command: sudo dpkg -i /cloudify-ui/*.deb
+2014-09-25 07:39:25,774 [INFO] cloudify-ui installation successful.
+2014-09-25 07:39:25,774 [INFO] deploying cloudify agents
+2014-09-25 07:39:25,774 [DEBUG] running command: sudo dpkg -i /cloudify-agents/*.deb
+2014-09-25 07:39:26,976 [DEBUG] successfully ran command: sudo dpkg -i /cloudify-agents/*.deb
+2014-09-25 07:39:26,976 [INFO] cloudify agents installation successful.
+2014-09-25 07:39:26,977 [DEBUG] setting verbosity to previous state
+2014-09-25 07:39:26,977 [INFO] bootstrapping complete
+2014-09-25 07:39:27,011 [ERROR] Failed making a call to REST service: 409: 409: provider_context CONTEXT already exists
+2014-09-29 10:37:28,135 [INFO] Using management server localhost
+2014-09-29 10:37:38,359 [INFO] Uploading blueprint blueprints/cloudify-nodecellar-singlehost/blueprint.yaml to management server localhost
+2014-09-29 10:37:41,439 [INFO] Uploaded blueprint, blueprint's id is: nodecellar1
